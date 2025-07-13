@@ -1,25 +1,23 @@
-import { createTheme } from "@mui/material/styles";
-import { red } from "@mui/material/colors";
-
-// Create a theme instance.
-const theme = createTheme({
-  cssVariables: true,
-  palette: {
-    mode: "light",
-    primary: {
-      main: "#556cd6",
+import { experimental_extendTheme as extendTheme } from "@mui/material/styles";
+import { teal, deepOrange, cyan, orange } from "@mui/material/colors";
+const theme = extendTheme({
+  colorSchemes: {
+    light: {
+      palette: {
+        primary: teal,
+        secondary: deepOrange,
+      },
     },
-    secondary: {
-      main: "#19857b",
-    },
-    error: {
-      main: red.A400,
-    },
-    text: {
-      primary: "#000",
-      secondary: red[500],
+    dark: {
+      palette: {
+        primary: cyan,
+        secondary: orange,
+      },
     },
   },
+  // 👇 Đây là phần quan trọng để setMode hoạt động
+  colorSchemeSelector: "body[data-theme]",
+  cssVarPrefix: "mui", // Tùy chọn, để prefix biến CSS
 });
 
 export default theme;
