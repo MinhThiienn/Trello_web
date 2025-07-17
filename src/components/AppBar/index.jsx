@@ -1,20 +1,74 @@
 import React from "react";
 import ModeSelect from "~/components/ModeSelect";
 import Box from "@mui/material/Box";
+import AppsIcon from "@mui/icons-material/Apps";
+import SvgIcon from "@mui/icons-material/Apps";
+import TrelloIcon from "~/assets/trello.svg?react";
+import { Button, Typography } from "@mui/material";
+import WordSpaces from "./Menus/WordSpaces";
+import Recent from "./Menus/Recent";
+import TextField from "@mui/material/TextField";
+import Starred from "./Menus/Starred";
+import Template from "./Menus/Template";
+import Badge from "@mui/material/Badge";
+import { NotificationsNone } from "@mui/icons-material";
+import Tooltip from "@mui/material/Tooltip";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import AccProfiles from "./Menus/AccProfiles";
 function AppBar() {
   return (
     <Box
       sx={{
-        backgroundColor: "primary.light",
         width: "100%",
         height: (theme) => {
           return theme.trelloCustom.appBarHeight;
         },
         display: "flex",
         alignItems: "center",
+        justifyContent: "space-between",
       }}
     >
-      <ModeSelect />
+      <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+        <AppsIcon sx={{ color: "primary.main" }} />
+        <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+          {" "}
+          <SvgIcon
+            component={TrelloIcon}
+            inheritViewBox
+            sx={{ color: "primary.main" }}
+          />
+          <Typography
+            variant="span"
+            sx={{ fontWeight: "Bold", color: "primary.main", fontSize: 20 }}
+          >
+            Trello
+          </Typography>
+        </Box>
+        <WordSpaces />
+        <Recent />
+        <Starred />
+        <Template />
+        <Button variant="outlined">Create</Button>
+      </Box>
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+        {" "}
+        <TextField
+          id="outlined-search"
+          label="Search"
+          type="search"
+          size="small"
+        />
+        <ModeSelect />
+        <Tooltip title="Notification">
+          <Badge color="secondary" variant="dot">
+            <NotificationsNone />
+          </Badge>
+        </Tooltip>
+        <Tooltip title="Help">
+          <HelpOutlineIcon sx={{ cursor: "pointer" }} />
+        </Tooltip>
+        <AccProfiles />
+      </Box>
     </Box>
   );
 }
