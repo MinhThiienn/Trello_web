@@ -19,9 +19,47 @@ const theme = extendTheme({
       },
     },
   },
-  // 👇 Đây là phần quan trọng để setMode hoạt động
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: "none",
+          fontWeight: "bold",
+          borderRadius: "4px", // Custom border radius
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          color: theme.palette.primary.main,
+          fontSize: "0.875rem", // 14px
+          // "&.Mui-focused": {
+          //   color: theme.palette.primary.main,
+          // },
+        }),
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: ({ theme }) => {
+          return {
+            color: theme.palette.text.primary,
+            fontSize: "0.875rem", // 14px
+            "& .MuiOutlinedInput-notchedOutline": {
+              borderColor: theme.palette.primary.light,
+            },
+            "&:hover .MuiOutlinedInput-notchedOutline": {
+              borderColor: theme.palette.primary.main,
+            },
+          };
+        },
+      },
+    },
+  },
+
   colorSchemeSelector: "body[data-theme]",
-  cssVarPrefix: "mui", // Tùy chọn, để prefix biến CSS
+  cssVarPrefix: "mui",
 });
 
 export default theme;
