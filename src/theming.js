@@ -24,6 +24,7 @@ const theme = extendTheme({
       },
     },
   },
+<<<<<<< HEAD
 
   components: {
     MuiCssBaseline: {
@@ -47,12 +48,19 @@ const theme = extendTheme({
         },
       },
     },
+=======
+  components: {
+>>>>>>> 2764f4c966c245dcdf0f4c2a87ea662f456196ae
     MuiButton: {
       styleOverrides: {
         root: {
           textTransform: "none",
           fontWeight: "bold",
+<<<<<<< HEAD
           borderRadius: "4px",
+=======
+          borderRadius: "4px", // Custom border radius
+>>>>>>> 2764f4c966c245dcdf0f4c2a87ea662f456196ae
         },
       },
     },
@@ -60,7 +68,14 @@ const theme = extendTheme({
       styleOverrides: {
         root: ({ theme }) => ({
           color: theme.palette.primary.main,
+<<<<<<< HEAD
           fontSize: "0.875rem",
+=======
+          fontSize: "0.875rem", // 14px
+          // "&.Mui-focused": {
+          //   color: theme.palette.primary.main,
+          // },
+>>>>>>> 2764f4c966c245dcdf0f4c2a87ea662f456196ae
         }),
       },
     },
@@ -69,7 +84,11 @@ const theme = extendTheme({
         root: ({ theme }) => {
           return {
             color: theme.palette.text.primary,
+<<<<<<< HEAD
             fontSize: "0.875rem",
+=======
+            fontSize: "0.875rem", // 14px
+>>>>>>> 2764f4c966c245dcdf0f4c2a87ea662f456196ae
             "& .MuiOutlinedInput-notchedOutline": {
               borderColor: theme.palette.primary.light,
             },
