@@ -26,6 +26,8 @@ function AppBar() {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
+        gap: 2,
+        overflow: "auto",
       }}
     >
       <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
@@ -44,11 +46,14 @@ function AppBar() {
             Trello
           </Typography>
         </Box>
-        <WordSpaces />
-        <Recent />
-        <Starred />
-        <Template />
-        <Button variant="outlined">Create</Button>
+        <Box sx={{ display: { xs: "none", md: "flex" }, gap: 1 }}>
+          {" "}
+          <WordSpaces />
+          <Recent />
+          <Starred />
+          <Template />
+          <Button variant="outlined">Create</Button>
+        </Box>
       </Box>
       <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
         {" "}
@@ -57,6 +62,7 @@ function AppBar() {
           label="Search"
           type="search"
           size="small"
+          sx={{ minWidth: 120 }}
         />
         <ModeSelect />
         <Tooltip title="Notification">
