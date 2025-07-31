@@ -25,6 +25,7 @@ function WordSpaces() {
   return (
     <Box>
       <Button
+        sx={{ color: "white" }}
         id="basic-button-wordSpaces"
         aria-controls={open ? "basic-menu-wordSpaces" : undefined}
         aria-haspopup="true"
